@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <h1>Add the pet you found !</h1>
+  <%= simple_form_for(pet) do |f| %>
+    <%= f.input :name, placeholder: "Django" %>
+    <%= f.input :address, placeholder: "Passage de la poule noire" %>
+    <%= f.input :species, collection: Pet::SPECIES %>
+    <%= f.input :found_on, as: :date, html5: true %>
+    <%= f.submit class:"btn btn-success mt-3" %>
+    <%= link_to "Cancel", pets_path, class:"btn btn-danger mt-3" %>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 align-center>All our lost little poor pets</h1>
+  <ul class="list-unstyled">
+    <% @pets.each do |pet| %>
+      <div>
+
+      </div>
+      <div class='bg-white d-flex justify-content-between p-2 rounded shadow-sm mb-3'>
+        <li> <%= link_to "#{pet.name}, found on #{pet.found_on} ", pet_path(pet), class: "text-decoration-none" %></li>
+        <div class='bg-white d-flex justify-content-between'>
+          <li> <%= link_to "✏", edit_pet_path(pet), class: "text-decoration-none mx-3" %></li>
+          <li> <%= link_to "❌", pet_path(pet), method: :delete, class: "text-decoration-none" %></li>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+  <%= link_to "Add a lost pet", new_pet_path, class: "btn btn-success" %>
+</div>

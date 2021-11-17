@@ -1,0 +1,9 @@
+
+<div class="container">
+  <h1> <%= @pet.name %> </h1>
+  <p>🏠 found in <%= @pet.address %> </p>
+  <p>👣 <%= @pet.name %> is a <%= @pet.species %> </p>
+  <p>📅 <%= @pet.found_on.strftime("%d/%m/%Y") %> </p>
+
+  <%= link_to "Go back", pets_path, class: "btn btn-success" %>
+</div>
